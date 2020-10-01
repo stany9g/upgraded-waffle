@@ -9,7 +9,7 @@ namespace PhotoAlbum
         /// Add <param name="photo"/> into the album
         /// </summary>
         /// <param name="id">id of the photo in the album, must be unique</param>
-        Result Add(int id, Photo photo);
+        Result Add(Photo photo);
 
         /// <summary>
         /// Remove photo from the album by ID
