@@ -21,5 +21,11 @@ namespace PhotoAlbum
         /// List all the photos in the album with its properties
         /// </summary>
         List<Photo> GetAllPhotos();
+
+        /// <summary>
+        /// Open specific photo by the id in the album
+        /// </summary>
+        /// <param name="id"></param>
+        void Show(int id);
     }
 }
