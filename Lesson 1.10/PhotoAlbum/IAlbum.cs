@@ -26,6 +26,6 @@ namespace PhotoAlbum
         /// Open specific photo by the id in the album
         /// </summary>
         /// <param name="id"></param>
-        void Show(int id);
+        Result Show(int id);
     }
 }
