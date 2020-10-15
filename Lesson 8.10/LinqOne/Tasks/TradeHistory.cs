@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +16,27 @@ namespace LinqPractise
             _transactions = transactions;
         }
 
+        public void Test()
+        {
+            var list = new List<int>
+            {
+                1,2,3,4,5,5
+            };
+
+            list.Add(5);
+
+            list.Where((number) => number == 5);
+        }
+
+
         /// <summary>
         /// Find all transactions in 2011 and order it by value
         /// </summary>
         /// <returns></returns>
         public List<Transaction> FindAllTransactionsIn2011AndSortByValueAsc()
         {
-            return new List<Transaction>();
+            return _transactions.Where((transaction) => transaction.Year == 2011)
+                .OrderBy(transaction => transaction.Value).ToList();
         }
 
         /// <summary>
@@ -30,7 +45,8 @@ namespace LinqPractise
         /// <returns></returns>
         public List<string> GetUniqueCitiesSortedAsc()
         {
-            return new List<string>();
+            return _transactions.Select(x => x.Trader.City).Distinct().OrderBy(x => x).ToList();
+
         }
 
         /// <summary>
@@ -40,7 +56,8 @@ namespace LinqPractise
         /// <returns></returns>
         public string GetSingleStringFromUniqueTradersNamesSortByNameAsc()
         {
-            return string.Empty;
+            var names = _transactions.Select(x => x.Trader.Name).Distinct().OrderBy(x => x).ToList();
+            return $"Traders: {string.Join(" ", names)}";
         }
 
         /// <summary>
@@ -50,7 +67,7 @@ namespace LinqPractise
         /// <returns></returns>
         public bool IsSomeTraderFromCity(string cityName)
         {
-            return false;
+            return _transactions.Select(x => x.Trader).Any(x => x.City == cityName);
         }
 
         /// <summary>
@@ -59,7 +76,7 @@ namespace LinqPractise
         /// <returns></returns>
         public Dictionary<string, List<Trader>> GetTradersByTown()
         {
-           return new Dictionary<string, List<Trader>>();
+           return _transactions.Select(x => x.Trader).Distinct().GroupBy(x => x.City).ToDictionary(x => x.Key, x => x.ToList());
         }
 
         /// <summary>
@@ -68,7 +85,7 @@ namespace LinqPractise
         /// <returns></returns>
         public Dictionary<string, long> GetTradersCountsByTown()
         {
-            return new Dictionary<string, long>();
+            return _transactions.Select(x => x.Trader).Distinct().GroupBy(x => x.City).ToDictionary(x => x.Key, x => (long)x.ToList().Count());
         }
 
     }
