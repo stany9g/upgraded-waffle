@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using PhotoAlbum.Abstract;
+using PhotoAlbum.Logger;
 
 namespace PhotoAlbum
 {
@@ -7,7 +9,10 @@ namespace PhotoAlbum
     {
         static void Main(string[] args)
         {
-            var album = new Album();
+            var person = new Person();
+
+            var fileLogger = new FileLogger();
+            var album = new Album(fileLogger);
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.White;
@@ -28,8 +33,8 @@ namespace PhotoAlbum
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 switch (choice)
                 {
-                    case Choice.Add:
-                        Console.Write("Name: ", Console.ForegroundColor);
+                    case "Add":
+                        Console.Write("Name: ");
                         var name = Console.ReadLine();
                         Console.Write("Path: ");
                         var path = Console.ReadLine();

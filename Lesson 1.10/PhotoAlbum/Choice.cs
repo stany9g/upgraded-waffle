@@ -4,7 +4,7 @@
     {
         Add,
         Remove,
-        List,
-        Show
+        List = 2,
+        Show = 3
     }
 }

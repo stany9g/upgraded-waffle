@@ -4,11 +4,19 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using PhotoAlbum.Logger;
 
 namespace PhotoAlbum
 {
     public class Album : IAlbum
     {
+        private readonly ILogger _logger;
+
+        public Album(ILogger logger)
+        {
+            _logger = logger;
+        }
+
         private readonly List<Photo> _storage = new List<Photo>();
 
         public Result Add(Photo photo)
@@ -28,8 +36,9 @@ namespace PhotoAlbum
                     return new Result("Removed successfully");
                 return new Result("Remove failed");
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentNullException e)
             {
+                _logger.Log(e.Message);
                 return new Result(e.Message);
             }
         }
