@@ -1,23 +1,25 @@
-﻿namespace Market.Data.Access
+﻿using Market.Models;
+
+namespace Market.DataAccess
 {
-    public class CustomerRepository : IRepository<CustomerRepository>
+    public class CustomerRepository : IRepository<Customer>
     {
-        public void Create(CustomerRepository[] model)
+        public void Create(Customer[] model)
         {
             throw new System.NotImplementedException();
         }
 
-        public CustomerRepository Read()
+        public Customer Read()
         {
             throw new System.NotImplementedException();
         }
 
-        public void Update(CustomerRepository model)
+        public void Update(Customer model)
         {
             throw new System.NotImplementedException();
         }
 
-        public void Delete(CustomerRepository model)
+        public void Delete(Customer model)
         {
             throw new System.NotImplementedException();
         }

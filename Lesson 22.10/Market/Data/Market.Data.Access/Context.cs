@@ -1,6 +1,6 @@
 ﻿using Market.Models;
 
-namespace Market.Data.Access
+namespace Market.DataAccess
 {
     public class Context : IContext
     {
@@ -10,5 +10,6 @@ namespace Market.Data.Access
         }
 
         public IRepository<Customer> Customers { get; set; }
+        public IRepository<Order> Orders { get; set; }
     }
 }

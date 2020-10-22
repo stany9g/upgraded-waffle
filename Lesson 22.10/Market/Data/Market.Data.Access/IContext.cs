@@ -1,4 +1,4 @@
-﻿namespace Market.Data.Access
+﻿namespace Market.DataAccess
 {
     public interface IContext
     {

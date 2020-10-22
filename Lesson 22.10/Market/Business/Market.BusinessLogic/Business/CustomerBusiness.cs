@@ -1,4 +1,4 @@
-﻿using Market.Data.Access;
+﻿using Market.DataAccess;
 
 namespace Market.BusinessLogic.Business
 {

@@ -1,10 +1,10 @@
-﻿using Market.Data.Access;
+﻿using Market.DataAccess;
 
 namespace Market.BusinessLogic.Business
 {
     public abstract class BaseBusiness
     {
-        private readonly IContext _context;
+        protected readonly IContext _context;
 
         protected BaseBusiness(IContext context)
         {

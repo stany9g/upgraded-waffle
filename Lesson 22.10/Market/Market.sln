@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{15
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{95358D2F-9426-4091-99E5-B694C704BE12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.DataAccess", "Data\Market.Data.Access\Market.DataAccess.csproj", "{4EBC268E-7918-45E6-87DE-49FAF138F25E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Market.DataAccess", "Data\Market.Data.Access\Market.DataAccess.csproj", "{4EBC268E-7918-45E6-87DE-49FAF138F25E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.BusinessLogic", "Business\Market.BusinessLogic\Market.BusinessLogic.csproj", "{E2A73D80-A789-4BED-B82F-AB1509B2E4F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Market.BusinessLogic", "Business\Market.BusinessLogic\Market.BusinessLogic.csproj", "{E2A73D80-A789-4BED-B82F-AB1509B2E4F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

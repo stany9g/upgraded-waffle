@@ -1,5 +1,6 @@
-﻿namespace Market.Data.Access
+﻿namespace Market.DataAccess
 {
+    //CRUD - Create, Read, Update, Delete
     public interface IRepository<TModel> where TModel : class
     {
         /// <summary>
