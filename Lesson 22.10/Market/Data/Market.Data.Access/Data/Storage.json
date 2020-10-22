@@ -1,0 +1,65 @@
+{
+  "store": {
+    "stock": {
+      "itemDetails": [
+        {
+          "id": 1,
+          "quantity": "10",
+          "item": {
+            "id": 1,
+            "name": "Bread",
+            "price": "9.9"
+          }
+
+        },
+        {
+          "id": 2,
+          "quantity": "10",
+          "item": {
+            "id": 2,
+            "name": "Meat",
+            "price": "100.0"
+          }
+
+        }
+      ]
+    },
+    "storeCards": [
+      {
+        "id": 1,
+        "guid": "d57ff196-dcd5-45a6-a672-5a17aebc660c",
+        "discount": "0"
+      },
+      {
+        "id": 2,
+        "guid": "ebb6b802-8add-4152-aced-6aa996d9fbfb",
+        "discount": "0"
+      }
+    ],
+    "orders": [
+      {
+        "id": 1,
+        "PurchasedTime": "",
+        "TotalAmount": "",
+        "items": []
+      }
+    ]
+  },
+  "customer": {
+    "id": 1,
+    "name": "Pepa",
+    "storeCard": {
+      "id": 2,
+      "guid": "ebb6b802-8add-4152-aced-6aa996d9fbfb",
+      "discount": "0"
+    },
+    "orders": [
+      {
+        "id": 1,
+        "PurchasedTime": "",
+        "TotalAmount": "",
+        "items": []
+      }
+    ]
+  }
+}
