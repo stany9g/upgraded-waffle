@@ -28,7 +28,7 @@ namespace LinqTwo
         /// </summary>
         public IEnumerable<string> DigitsShorterThanValue(string[] digits)
         {
-            return new List<string>();
+            return digits.Where((digit, index) => digit.Length < index);
         }
 
 
@@ -37,7 +37,8 @@ namespace LinqTwo
         /// </summary>
         public IEnumerable<string> SelectStringByIndexInNumbers(int[] indexes, string[] strings)
         {
-            return new List<string>();
+            return indexes.Select(x => strings[x]);
+            //return from index in indexes select strings[index];
         }
 
 
@@ -48,7 +49,13 @@ namespace LinqTwo
         /// <returns></returns>
         public IEnumerable<string> MultipleConditions(List<Customer> customers, DateTime date, string region)
         {
-            return new List<string>();
+            var result = from customer in customers
+                         where customer.Region == region
+                         from orders in customer.Orders
+                         where orders.OrderDate >= date
+                         select (customer.CustomerID, orders.OrderID);
+
+            return result.Select(x => $"Customer: {x.CustomerID}, Order: {x.OrderID}");
         }
 
 
@@ -57,7 +64,7 @@ namespace LinqTwo
         /// </summary>
         public IEnumerable<int> TakeElements(int[] numbers, int take)
         {
-            return new List<int>();
+            return numbers.Take(take);
         }
 
         /// <summary>
@@ -65,7 +72,7 @@ namespace LinqTwo
         /// </summary>
         public IEnumerable<int> SkipElements(int[] numbers, int skip)
         {
-            return new List<int>();
+            return numbers.Skip(skip);
         }
 
         /// <summary>
@@ -73,7 +80,7 @@ namespace LinqTwo
         /// </summary>
         public IEnumerable<int> TakeWhileElements(int[] numbers)
         {
-            return new List<int>();
+            return numbers.TakeWhile((x, index) => x >= index);
         }
 
         /// <summary>
@@ -81,7 +88,7 @@ namespace LinqTwo
         /// </summary>
         public IEnumerable<int> SkipWhileElements(int[] numbers)
         {
-            return new List<int>();
+            return numbers.SkipWhile((x, index) => x >= index);
         }
     }
 }
