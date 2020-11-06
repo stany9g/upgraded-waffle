@@ -25,7 +25,7 @@
         /// Return a minimum value from subtree of node
         /// </summary>
         /// <param name="start"></param>
-        void SubtreeMin(Node start);
+        int SubtreeMin(Node start);
 
         /// <summary>
         /// Returns an array in PreOrder traverse
